@@ -1,108 +1,82 @@
-.block.block-navbar.wrapper: .navbar-inner
-    a(ui-sref="home").navbar-logo
-        img(ng-src="{{ './assets/img/logo-normal' + cfg.logoExtension }}")
-        img(ng-src="{{ './assets/img/logo-hover' + cfg.logoExtension }}").hover
-    nav.navbar-list(ng-class="mobileMenu?'navbar-list-show':''")
-        .navbar-list-auth.show-sm(ng-if="$root.auth_user")
-            // Auth menu
-            nav.navbar-item-wrapper
-                .navbar-item(ng-click="openActivateCodePopup()" translate="topnavbar.buttons.activate")
-
-            nav.navbar-item-wrapper(ng-if="$root.appConfigs.features.records.list")
-                .navbar-item(ui-sref="records") 
-                    | Mijn eigenschappen
-
-            nav.navbar-item-wrapper
-                .navbar-item(ng-click="openPinCodePopup()" translate="topnavbar.buttons.authorize")
-
-            nav.navbar-item-wrapper
-                .navbar-item(ui-sref="vouchers" translate="topnavbar.buttons.voucher")
-
-            nav.navbar-item-wrapper
-                .navbar-item(ng-click="$root.signOut()" translate="topnavbar.buttons.logout")
-
-        // Menu
-        nav.navbar-item-wrapper(ng-if="$root.appConfigs.features.funds.list" ng-click="mobileMenu = false")
-            a.navbar-item(
-                ui-sref="funds" 
-                ui-sref-active="active"
-                ng-bind="'topnavbar.items.funds' | translate")
-        nav.navbar-item-wrapper(ng-if="$root.appConfigs.flags.productsMenu || $root.auth_user" ng-click="mobileMenu = false")
-            a.navbar-item(
-                ui-sref="products" 
-                ui-sref-active="active"
-                ng-bind="'topnavbar.items.products' | translate")
-                                                                                                                               
-    .block.block-auth.block-auth-border.hide-sm(ng-if="$root.auth_user")
-        .auth-code
-            a(ui-sref="vouchers").button.button-default
-                em.mdi.mdi-ticket-confirmation
-                span(translate="topnavbar.buttons.voucher") 
-
+.block.block-navbar.wrapper
+  .navbar-inner
+    a.navbar-logo(ui-sref='home')
+      img(ng-src="{{ './assets/img/logo-normal' + cfg.logoExtension }}")
+      img.hover(ng-src="{{ './assets/img/logo-hover' + cfg.logoExtension }}")
+    .navbar-stretch
+    .block.block-auth.block-auth-border.hide-sm(ng-if='$root.auth_user')
+      .auth-code
+        a.button.button-default(ui-sref='vouchers')
+          em.mdi.mdi-ticket-confirmation
+          span(translate='topnavbar.buttons.voucher')  
     .block.block-auth
-        .auth-in(ng-if="$root.auth_user")
-            .auth-user
-                .auth-user-email(ng-bind="$root.auth_user.primary_email")
-                .auth-user-type(translate="topnavbar.items.identity")
-                .auth-user-avatar
-                    img(src="./assets/img/identity-avatar.svg")
-                    nav.auth-user-menu.hide-sm
-                        .triangle
-                        .inner
-                            a(ng-click="openActivateCodePopup()").auth-user-menu-item
-                                img(src="./assets/img/icon-menu/icon-menu-my-vouchers.svg")
-                                span(translate="topnavbar.buttons.activate")
-                            a(
-                                ui-sref="records"
-                                ng-if="$root.appConfigs.features.records.list").auth-user-menu-item
-                                img(src="./assets/img/icon-menu/icon-menu-my-records.svg")
-                                | Mijn eigenschappen
-                            .auth-user-menu-item(ng-click="openPinCodePopup()")
-                                em.mdi.mdi-cellphone
-                                span(translate="topnavbar.buttons.authorize")
-
-                            .auth-user-menu-separator.show-sm
-                            a.auth-user-menu-item.show-sm(
-                                ui-sref="funds" 
-                                ui-sref-active="active"
-                                ng-if="$root.appConfigs.features.funds.list")
-                                em.mdi.mdi-star-outline
-                                span(translate="topnavbar.buttons.logout")
-                            a.auth-user-menu-item.show-sm(
-                                ui-sref="products" 
-                                ui-sref-active="active"
-                                ng-if="$root.appConfigs.features.products.list")
-                                em.mdi.mdi-store
-                                span(translate="topnavbar.buttons.products")
-                            .auth-user-menu-separator.show-sm
-                            .auth-user-menu-item.show-sm(ui-sref="vouchers")
-                                em.mdi.mdi-ticket-confirmation
-                                span(translate="topnavbar.buttons.voucher")
-                            .auth-user-menu-separator
-                            div(ng-click="$root.signOut()").auth-user-menu-item
-                                img(src="./assets/img/icon-menu/icon-menu-sign-out.svg")
-                                span(translate="topnavbar.buttons.logout")
-
-        .auth-out(ng-if="!$root.auth_user")
-            //-.button.button-default(ng-if="$root.appConfigs.flags.aboutSiteMenu" ng-click="openAuthCodePopup()")
-                em.mdi.mdi-ticket-confirmation 
-                span(translate="topnavbar.buttons.activate")
-            .button.button-default(ng-click="openAuthPopup()")
-                em.mdi.mdi-account
-                span(translate="topnavbar.buttons.login")
-    
+      .auth-in(ng-if='$root.auth_user')
+        .auth-user
+          .auth-user-email(ng-bind='$root.auth_user.primary_email')
+          .auth-user-type(translate='topnavbar.items.identity')
+          .auth-user-avatar
+            img(src='./assets/img/identity-avatar.svg')
+            nav.auth-user-menu.hide-sm
+              .triangle
+              .inner
+                a.auth-user-menu-item(ng-click='openActivateCodePopup()')
+                  img(src='./assets/img/icon-menu/icon-menu-my-vouchers.svg')
+                  span(translate='topnavbar.buttons.activate')
+                a.auth-user-menu-item(ui-sref='records', ng-if='$root.appConfigs.features.records.list')
+                  img(src='./assets/img/icon-menu/icon-menu-my-records.svg')
+                  | Mijn eigenschappen
+                .auth-user-menu-item(ng-click='openPinCodePopup()')
+                  em.mdi.mdi-cellphone
+                  span(translate='topnavbar.buttons.authorize')
+                .auth-user-menu-separator.show-sm
+                a.auth-user-menu-item.show-sm(ui-sref='funds', ng-if='$root.appConfigs.features.funds.list', ui-sref-active='active')
+                  em.mdi.mdi-star-outline
+                  span(translate='topnavbar.buttons.logout')
+                a.auth-user-menu-item.show-sm(ui-sref='products', ng-if='$root.appConfigs.features.products.list', ui-sref-active='active')
+                  em.mdi.mdi-store
+                  span(translate='topnavbar.buttons.products')
+                .auth-user-menu-separator.show-sm
+                .auth-user-menu-item.show-sm(ui-sref='vouchers')
+                  em.mdi.mdi-ticket-confirmation
+                  span(translate='topnavbar.buttons.voucher')
+                .auth-user-menu-separator
+                .auth-user-menu-item(ng-click='$root.signOut()')
+                  img(src='./assets/img/icon-menu/icon-menu-sign-out.svg')
+                  span(translate='topnavbar.buttons.logout')
+      .auth-out(ng-if='!$root.auth_user')
+        .button.button-default(ng-click='openAuthPopup()')
+          em.mdi.mdi-account
+          span(translate='topnavbar.buttons.login')
     .navbar-mobile-menu.show-sm
-        em.mdi(ng-class="mobileMenu?'mdi-close':'mdi-menu'" ng-click="mobileMenu = !mobileMenu")
-
-    //- .block.block-auth.sm-pull-left
-        .lang-selector
-            .lang-label 
-                em.mdi.mdi-chevron-down
-                | Language
-            .lang-active(ng-bind="'languages.' + i18nActive | translate")
-            .lang-list
-                .lang-list-item(
-                    ng-repeat="lang in i18nLangs" 
-                    ng-bind="'languages.' + lang | translate"
-                    ng-click="setLang(lang)")
-    
+      em.mdi(ng-class="mobileMenu?'mdi-close':'mdi-menu'", ng-click='mobileMenu = !mobileMenu')
+  nav.navbar-list(ng-class="mobileMenu?'navbar-list-show':''")
+    .navbar-list-auth.show-sm(ng-if='$root.auth_user')
+      // Auth menu
+      nav.navbar-item-wrapper
+        .navbar-item(translate='topnavbar.buttons.activate', ng-click='openActivateCodePopup()')
+      nav.navbar-item-wrapper(ng-if='$root.appConfigs.features.records.list')
+        .navbar-item(ui-sref='records') Mijn eigenschappen
+      nav.navbar-item-wrapper
+        .navbar-item(translate='topnavbar.buttons.authorize', ng-click='openPinCodePopup()')
+      nav.navbar-item-wrapper
+        .navbar-item(ui-sref='vouchers', translate='topnavbar.buttons.voucher')
+      nav.navbar-item-wrapper
+        .navbar-item(translate='topnavbar.buttons.logout', ng-click='$root.signOut()')
+    // Menu
+    .navbar-item-container
+      nav.navbar-item-wrapper(ng-if='$root.appConfigs.features.funds.list', ng-click='mobileMenu = false')
+        a.navbar-item(ui-sref='funds', ng-bind="'topnavbar.items.funds' | translate", ui-sref-active='active')
+      nav.navbar-item-wrapper(ng-if='$root.appConfigs.flags.productsMenu || $root.auth_user', ng-click='mobileMenu = false')
+        a.navbar-item(ui-sref='products', ng-bind="'topnavbar.items.products' | translate", ui-sref-active='active')
+      nav.navbar-item-wrapper(ng-if='$root.appConfigs.flags.forusPlatformMenu && !$root.auth_user', ng-click='mobileMenu = false')
+        a.navbar-item(target='_self', ui-sref='forus-platform', ui-sref-active='active', i18n='PLATFORM')  
+      nav.navbar-item-wrapper(ng-if='$root.appConfigs.flags.meAppMenu && !$root.auth_user', ng-click='mobileMenu = false')
+        a.navbar-item(target='_self', ui-sref='me-app', ui-sref-active='active', i18n='ME')  
+      nav.navbar-item-wrapper(ng-if='$root.appConfigs.flags.portfolioMenu && !$root.auth_user', ng-click='mobileMenu = false')
+        a.navbar-item(target='_self', ui-sref='portfolio', ui-sref-active='active', i18n='PORTFOLIO')
+        nav.navbar-menu
+          .triangle
+          .inner
+            a.navbar-menu-item(ui-sref='kindpakket', i18n='Kindpakket')
+      nav.navbar-item-wrapper(ng-if='$root.appConfigs.flags.aboutSiteMenu && !$root.auth_user', ng-click='mobileMenu = false')
+        a.navbar-item(href='{{ $root.appConfigs.about_url }}', target='_blank', i18n='OVER ONS')

@@ -61,6 +61,28 @@ module.exports = (core) => {
 
         return platform;
     });
+	
+	    core.editPlatform('dashboard_emmen_sponsor', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'emmen',
+            panel_type: 'sponsor',
+            chat_id: false
+        });
+
+        return platform;
+    });
+
+    core.editPlatform('dashboard_emmen_provider', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'emmen',
+            panel_type: 'provider',
+            chat_id: false
+        });
+
+        return platform;
+    });
 
     core.editPlatform('dashboard_westerkwartier_provider', (platform) => {
         platform.setEnvData({
@@ -127,6 +149,16 @@ module.exports = (core) => {
 
         return platform;
     });
+	
+	    core.editPlatform('webshop_emmen', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'emmen',
+            client_type: 'webshop',
+        });
+
+        return platform;
+    });
 
     core.editPlatform('webshop_nijmegen', (platform) => {
         platform.setEnvData({
@@ -160,11 +192,46 @@ module.exports = (core) => {
     });
 
     // Config meapp landings
-    core.editPlatform('website', (platform) => {
+    core.editPlatform('landing_meapp_general', (platform) => {
         platform.setEnvData({
             api_url: api_url,
-            client_key: 'general',
-            panel_type: 'validator',
+            client_key: 'general'
+        });
+
+        return platform;
+    });
+
+    core.editPlatform('landing_meapp_zuidhorn', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'zuidhorn'
+        });
+
+        return platform;
+    });
+	
+	    core.editPlatform('landing_meapp_emmen', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'emmen'
+        });
+
+        return platform;
+    });
+
+    core.editPlatform('landing_meapp_nijmegen', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'nijmegen'
+        });
+
+        return platform;
+    });
+
+    core.editPlatform('landing_meapp_westerkwartier', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'westerkwartier'
         });
 
         return platform;

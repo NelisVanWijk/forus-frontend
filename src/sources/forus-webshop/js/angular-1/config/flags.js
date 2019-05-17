@@ -4,18 +4,18 @@ module.exports = {
         showAccountSidebar: true,
 
         // menu settings
-        productsMenu: true,
+        productsMenu: false,
         meAppMenu: true,
         forusPlatformMenu: true,
         portfolioMenu: true,
         aboutSiteMenu: true,
 
         // home settings
-        homeProducts: true,
-        homeMap: true,
-        homeSteps: true,
-        homeFaq: true,
-        homeButton: true,
+        homeProducts: false,
+        homeMap: false,
+        homeSteps: false,
+        homeFaq: false,
+        homeButton: false,
         
         //voucher settings
         shareProducts: true,
@@ -25,18 +25,18 @@ module.exports = {
         showAccountSidebar: false,
 
         // menu settings
-        productsMenu: true,
+        productsMenu: false,
         meAppMenu: true,
         forusPlatformMenu: true,
         portfolioMenu: true,
         aboutSiteMenu: true,
 
         // home settings
-        homeProducts: true,
-        homeMap: true,
-        homeSteps: true,
-        homeFaq: true,
-        homeButton: true,
+        homeProducts: false,
+        homeMap: false,
+        homeSteps: false,
+        homeFaq: false,
+        homeButton: false,
         
         //voucher settings
         shareProducts: true,
@@ -57,6 +57,27 @@ module.exports = {
         homeMap: true,
         homeSteps: true,
         homeFaq: true,
+        homeButton: true,
+        
+        //voucher settings
+        shareProducts: true,
+    },
+	emmen: {
+        logoExtension: '.png',
+        showAccountSidebar: false,
+
+        // menu settings
+        productsMenu: true,
+        meAppMenu: false,
+        forusPlatformMenu: false,
+        portfolioMenu: false,
+        aboutSiteMenu: false,
+
+        // home
+        homeProducts: true,
+        homeMap: true,
+        homeSteps: true,
+        homeFaq: false,
         homeButton: true,
         
         //voucher settings
