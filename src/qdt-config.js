@@ -29,10 +29,6 @@ core.addPlatform(require('./platforms/Webshops/WebshopForusPlatform'));
 core.addPlatform(require('./platforms/Webshops/WebshopWesterkwartierPlatform'));
 
 // Register meapp landings
-core.addPlatform(require('./platforms/Landings/LandingMeAppGeneralPlatform'));
-core.addPlatform(require('./platforms/Landings/LandingMeAppZuidhornPlatform'));
-core.addPlatform(require('./platforms/Landings/LandingMeAppEmmenPlatform'));
-core.addPlatform(require('./platforms/Landings/LandingMeAppNijmegenPlatform'));
-core.addPlatform(require('./platforms/Landings/LandingMeAppWesterkwartierPlatform'));
+core.addPlatform(require('./platforms/Website/Website'));
 
 module.exports = core;
