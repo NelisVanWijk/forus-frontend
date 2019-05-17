@@ -50,6 +50,7 @@ module.exports = {
             title_zuidhorn: "Een profiel voor het Kindpakket",
             title_westerkwartier: "Een profiel voor het Kindpakket",
             title_forus: "Een profiel voor het Kerstpakket",
+			title_emmen: "Een profiel voor de Participatiewebshop",
             description: "Een profiel om in te loggen, waarmee u vouchers kan beheren en veilig kan betalen",
         },
         buttons: {
@@ -141,7 +142,7 @@ module.exports = {
             spend: "Startbudget",
             used: "Totaal uitgegeven bedrag in %",
             usage: "uitgegeven",
-            payed: "Uitgegeven bij",
+            payed: "Uitgegeven in",
             shops: "Aanbieders",
             activation: "Aantal geactiveerd",
             citizen: "Nieuwe inwoners",
@@ -906,8 +907,7 @@ module.exports = {
         },
         notifications: {
             confirmation: "Het is gelukt!",
-            link: "Er is een link naar je e-mailadres gestuurd.",
-            link_website: "Er is een e-mail naar uw inbox gestuurd. In de e-mail vindt u een link dat u inlogd in op deze website.",
+            link: "Er is een link naar je e-mail adres gestuurd",
             invalid: "De activatiecode is ongeldig of al gebruikt",
             voucher_email: "Het is gelukt, de e-mail is verstuurd",
         },
@@ -917,12 +917,10 @@ module.exports = {
             submit: "VERSTUREN",
             cancel: "ANNULEREN",
             confirm: "VOLGENDE",
-            close: "SLUITEN",
         },
         labels: {
-            timelimit: "De link verloopt in 24 uur, gebruik de link dus binnenkort.",
+            timelimit: "U kunt tot 14:55 uur (Nederlandse tijd) inloggen. Daarna verloopt uw sessie.",
             join: "Aanmelden",
-            mail_sent: "Een e-mail is onderweg!",
             scancode: "Scan deze QR-Code met een ander apparaat waar u al op aangemeld bent",
             mobilecode: "Vul de toegangscode van de Me-app in",
             mail: "Dit scherm is alleen bedoeld voor inwoners die een brief van de gemeente hebben ontvangen met daarin een activatiecode en deze nog niet hebben gebruikt.",
@@ -939,7 +937,7 @@ module.exports = {
         pin_code: {
             confirmation: {
                 title: "Is de mobiele app gekoppeld aan uw persoonlijk e-mailadres?",
-                description: "Ga naar het tabblad Profiel in de app. Ziet u hier uw e-mailadres staan? Dan is de app succesvol gekoppeld. Als u het tabblad Profiel niet ziet staan, probeer het dan nog opnieuw.",
+                description: "Ga naar het tabblad Profiel in de app. Ziet u hier uw e-mailadres staan? Dan is de app succesvol gekoppeld. Als u de keuze voor Profiel niet hebt, probeer het dan nog is.",
                 buttons: {
                     try_again: "Opnieuw proberen",
                     confirm: "Volgende"
@@ -978,22 +976,5 @@ module.exports = {
         }
     },
   
-    search: "Zoeken",
-
-    open_in_me: {
-        app_header: {
-            title: 'Vul de code in op het invoerveld',
-            subtitle: 'De code is te vinden in de mobiele applicatie, volg de bovenstaande stappen op om de code te kunnen aflezen.'
-        },
-        app_instruction: {
-            step_1: 'Open <i>Me</i>',
-            step_2: 'Ik heb al een profiel',
-            step_3: 'Inloggen met Autorisatie code',
-        },
-        authorize: {
-            close: 'Annuleren',
-            submit: 'Autoriseer apparaat',
-        }
-    },
+    search: "Zoeken"
 }
-
