@@ -1,4 +1,4 @@
-let api_url = "https://dev.api.forus.link/api/v1";
+let api_url = "https://emmenapi.ddns.net/api/v1";
 let about_url = "https://about.forus.io/";
 
 module.exports = (core) => {
@@ -139,21 +139,22 @@ module.exports = (core) => {
 
         return platform;
     });
-
-    core.editPlatform('webshop_zuidhorn', (platform) => {
-        platform.setEnvData({
-            api_url: api_url,
-            client_key: 'zuidhorn',
-            client_type: 'webshop',
-        });
-
-        return platform;
-    });
 	
 	    core.editPlatform('webshop_emmen', (platform) => {
         platform.setEnvData({
             api_url: api_url,
             client_key: 'emmen',
+            client_type: 'webshop',
+            about_url: about_url
+        });
+
+        return platform;
+    });
+
+    core.editPlatform('webshop_zuidhorn', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'zuidhorn',
             client_type: 'webshop',
         });
 
@@ -192,46 +193,11 @@ module.exports = (core) => {
     });
 
     // Config meapp landings
-    core.editPlatform('landing_meapp_general', (platform) => {
+    core.editPlatform('website', (platform) => {
         platform.setEnvData({
             api_url: api_url,
-            client_key: 'general'
-        });
-
-        return platform;
-    });
-
-    core.editPlatform('landing_meapp_zuidhorn', (platform) => {
-        platform.setEnvData({
-            api_url: api_url,
-            client_key: 'zuidhorn'
-        });
-
-        return platform;
-    });
-	
-	    core.editPlatform('landing_meapp_emmen', (platform) => {
-        platform.setEnvData({
-            api_url: api_url,
-            client_key: 'emmen'
-        });
-
-        return platform;
-    });
-
-    core.editPlatform('landing_meapp_nijmegen', (platform) => {
-        platform.setEnvData({
-            api_url: api_url,
-            client_key: 'nijmegen'
-        });
-
-        return platform;
-    });
-
-    core.editPlatform('landing_meapp_westerkwartier', (platform) => {
-        platform.setEnvData({
-            api_url: api_url,
-            client_key: 'westerkwartier'
+            client_key: 'general',
+            panel_type: 'validator',
         });
 
         return platform;
