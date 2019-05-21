@@ -139,21 +139,22 @@ module.exports = (core) => {
 
         return platform;
     });
+	
+	    core.editPlatform('webshop_emmen', (platform) => {
+        platform.setEnvData({
+            api_url: api_url,
+            client_key: 'emmen',
+            client_type: 'webshop',
+            about_url: about_url
+        });
+
+        return platform;
+    });
 
     core.editPlatform('webshop_zuidhorn', (platform) => {
         platform.setEnvData({
             api_url: api_url,
             client_key: 'zuidhorn',
-            client_type: 'webshop',
-        });
-
-        return platform;
-    });
-	
-	core.editPlatform('webshop_emmen', (platform) => {
-        platform.setEnvData({
-            api_url: api_url,
-            client_key: 'emmen',
             client_type: 'webshop',
         });
 
